@@ -1,0 +1,28 @@
+{
+  "name": "Open Medium.com in Incognito",
+  "description": "Always open medium.com in incognito mode.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.medium.com/**"],
+      "js": ["contentscript.js"]
+    }
+  ],
+  "action": {
+    "default_title": "Open Medium.com in Incognito",
+    "default_icon": "images/icon-128.png",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "images/icon-16.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+  "permissions": [
+    "storage"
+  ]
+}

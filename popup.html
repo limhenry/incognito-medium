@@ -1,0 +1,88 @@
+<style>
+  body {
+    padding: 24px 8px 16px;
+    display: grid;
+    place-items: center;
+    grid-gap: 16px;
+    text-align: center;
+  }
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  input:checked + .slider {
+    background-color: #5689dd;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #5689dd;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+
+  footer {
+    margin-top: 24px;
+    font-size: 12px;
+    opacity: 0.8;
+  }
+
+  footer a {
+    text-decoration: underline;
+    color: black;
+  }
+</style>
+<body style="width: 250px">
+  <label class="switch">
+    <input type="checkbox" />
+    <span class="slider round"></span>
+  </label>
+  <h3>Always open medium.com<br>in Incognito mode</h3>
+  <footer>
+    <a href="https://github.com/limhenry/incognito-medium" target="_blank">GitHub</a> &middot;
+    <a href="https://twitter.com/henrylim96" target="_blank">Twitter</a> &middot;
+    <a href="https://limhenry.xyz/slides/" target="_blank">Remote for Slides</a>
+  </footer>
+  <script src="popup.js"></script>
+</body>
